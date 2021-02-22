@@ -1,58 +1,141 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
+	<div class="flex-container">
+		<img :src="getImageURL" alt="alternate text" class="main-image" />
+		<img
+			src="/img/02.jpg"
+			alt=""
+			class="thumbnail"
+			@click="setmainimage('02.jpg')"
+		/>
+		<img
+			src="/img/03.jpg"
+			alt=""
+			class="thumbnail"
+			@click="setmainimage('03.jpg')"
+		/>
+		<img
+			src="/img/04.jpg"
+			alt=""
+			class="thumbnail"
+			@click="setmainimage('04.jpg')"
+		/>
+		<img
+			src="/img/05.jpg"
+			alt=""
+			class="thumbnail"
+			@click="setmainimage('05.jpg')"
+		/>
+		<img
+			src="/img/06.jpg"
+			alt=""
+			class="thumbnail"
+			@click="setmainimage('06.jpg')"
+		/>
+		<img
+			src="/img/07.jpg"
+			alt=""
+			class="thumbnail"
+			@click="setmainimage('07.jpg')"
+		/>
+		<img
+			src="/img/08.jpg"
+			alt=""
+			class="thumbnail"
+			@click="setmainimage('08.jpg')"
+		/>
+		<img
+			src="/img/09.jpg"
+			alt=""
+			class="thumbnail"
+			@click="setmainimage('09.jpg')"
+		/>
+		<img
+			src="/img/10.jpg"
+			alt=""
+			class="thumbnail"
+			@click="setmainimage('10.jpg')"
+		/>
+		<img
+			src="/img/11.jpg"
+			alt=""
+			class="thumbnail"
+			@click="setmainimage('11.jpg')"
+		/>
+		<img
+			src="/img/12.jpg"
+			alt=""
+			class="thumbnail"
+			@click="setmainimage('12.jpg')"
+		/>
+		<img
+			src="/img/13.jpg"
+			alt=""
+			class="thumbnail"
+			@click="setmainimage('13.jpg')"
+		/>
+		<img
+			src="/img/130_GSM.jpg"
+			alt=""
+			class="thumbnail"
+			@click="setmainimage('130_GSM.jpg')"
+		/>
+	</div>
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
+	export default {
+		name: 'HelloWorld',
+		props: {},
+		components: {},
+
+		data() {
+			return {
+				Image_URL: '02.jpg',
+			};
+		},
+		computed: {
+			getImageURL() {
+				return '/img/' + this.Image_URL;
+			},
+		},
+
+		methods: {
+			setmainimage(pic) {
+				this.Image_URL = pic;
+			},
+		},
+	};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+	.grid-container {
+		display: flex;
+		flex-direction: column;
+	}
+	.main-image {
+		height: 80vh;
+		width: 100%;
+		display: block;
+		margin: 0 auto;
+	}
+	/* .main-container {
+		display: flex;
+		margin-top: 0;
+		margin-left: 0.1%;
+		margin-right: 0.1%;
+	} */
+	.thumbnail {
+		position: relative;
+		height: 10%;
+		width: 10%;
+		padding-right: 10px;
+		margin-top: 1%;
+		margin-left: 10px;
+		justify-content: space-evenly;
+		flex-direction: row;
+	}
+	.thumbnail:hover {
+		cursor: pointer;
+	}
 </style>

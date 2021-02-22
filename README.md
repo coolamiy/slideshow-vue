@@ -1,4 +1,4 @@
-# muheen
+#slideshow
 
 ## Project setup
 ```
